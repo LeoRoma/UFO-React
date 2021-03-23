@@ -1,18 +1,22 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import UFO from './UFO';
+import Sky from './Sky';
 
 function Canvas() {
     const canvasRef = useRef(null);
-    // state
+    const [width] = useState(800);
+    const [height] = useState(450);
 
     useEffect(() => {
         const canvas = canvasRef.current;
         const ctx = canvas.getContext("2d");
-        canvas.width = 800;
-        canvas.height = 450;
-        const stars = createStars(canvas.width, canvas.height, 50)
-        createSky(ctx, stars);
+        canvas.width = width;
+        canvas.height = height;
+        // const stars = createStars(canvas.width, canvas.height, 50)
+        // createSky(ctx, stars);
+        Sky(ctx);
         UFO(ctx)
+       
         // createUfo(ctx);
     })
 
