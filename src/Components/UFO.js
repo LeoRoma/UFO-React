@@ -1,5 +1,5 @@
 function UFO(ctx){
-    
+
     function createUFOWindShield(ctx){
         ctx.beginPath();
         ctx.arc(400, 100, 50, 3.15, Math.PI * 2);
@@ -24,27 +24,9 @@ function UFO(ctx){
         ctx.stroke();
     }
 
-    function createUFOLights(ctx){
+    function createUFOLights(ctx, xAxis, yAxis){
         ctx.beginPath();
-        ctx.arc(340, 110, 5, 0, Math.PI * 2);
-        ctx.fillStyle = "white";
-        ctx.fill();
-        ctx.stroke();
-    
-        ctx.beginPath();
-        ctx.arc(380, 103, 5, 0, Math.PI * 2);
-        ctx.fillStyle = "white";
-        ctx.fill();
-        ctx.stroke();
-    
-        ctx.beginPath();
-        ctx.arc(420, 103, 5, 0, Math.PI * 2);
-        ctx.fillStyle = "white";
-        ctx.fill();
-        ctx.stroke();
-    
-        ctx.beginPath();
-        ctx.arc(460, 110, 5, 0, Math.PI * 2);
+        ctx.arc(xAxis, yAxis, 5, 0, Math.PI * 2);
         ctx.fillStyle = "white";
         ctx.fill();
         ctx.stroke();
@@ -62,8 +44,13 @@ function UFO(ctx){
         createUFOWindShield(ctx);
         createUFODisc(ctx);
         createUFOBottom(ctx);
-        createUFOLights(ctx);
+      
         createUFOLightReflex(ctx);
+
+        createUFOLights(ctx, 340, 110);
+        createUFOLights(ctx, 380, 103);
+        createUFOLights(ctx, 420, 103);
+        createUFOLights(ctx, 460, 110);
     }
  
     createUFO(ctx);
