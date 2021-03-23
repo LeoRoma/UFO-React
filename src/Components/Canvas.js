@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import UFO from './UFO';
 import Sky from './Sky';
+import Stars from './Stars';
 
 function Canvas() {
     const canvasRef = useRef(null);
@@ -12,9 +13,10 @@ function Canvas() {
         const ctx = canvas.getContext("2d");
         canvas.width = width;
         canvas.height = height;
-        // const stars = createStars(canvas.width, canvas.height, 50)
+        const stars = Stars(width, height, 50)
+        console.log(stars)
         // createSky(ctx, stars);
-        Sky(ctx);
+        Sky(ctx, stars);
         UFO(ctx)
        
         // createUfo(ctx);
@@ -34,24 +36,22 @@ function Canvas() {
 
 
 
-    function randomInt(max) {
-        return Math.floor(Math.random() * max);
-    }
+  
 
-    function createStars(width, height, spacing) {
-        const stars = [];
+    // function createStars(width, height, spacing) {
+    //     const stars = [];
 
-        for (let x = 0; x < width; x += spacing) {
-            for (let y = 0; y < height; y += spacing) {
-                const star = {
-                    x: x + randomInt(spacing),
-                    y: y + randomInt(spacing)
-                };
-                stars.push(star);
-            }
-        }
-        return stars;
-    }
+    //     for (let x = 0; x < width; x += spacing) {
+    //         for (let y = 0; y < height; y += spacing) {
+    //             const star = {
+    //                 x: x + randomInt(spacing),
+    //                 y: y + randomInt(spacing)
+    //             };
+    //             stars.push(star);
+    //         }
+    //     }
+    //     return stars;
+    // }
 
     function createSky(context, stars) {
         let counter = 0
