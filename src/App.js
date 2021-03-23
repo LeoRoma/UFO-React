@@ -1,11 +1,11 @@
 import './App.css';
-// import CanvasComponent from './Components/CanvasComponent';
-import Animations from './Components/Animations'
+
+import Canvas from './Components/Canvas'
 
 function App() {
   return (
     <div className="App">
-      <Animations />
+      <Canvas />
     </div>
   );
 }

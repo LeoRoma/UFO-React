@@ -1,95 +1,128 @@
-import React, { Component } from 'react';
+import React, { useRef, useEffect } from 'react';
 
-class Canvas extends Component {
-    constructor(props) {
-        super(props);
+function Canvas() {
+    const canvasRef = useRef(null);
 
-        this.paint = this.initCanvas.bind(this);
-    }
-
-    componentDidUpdate() {
-        this.initCanvas();
-    }
-
-    initCanvas() {
-        const { rotation } = this.props;
-        const canvas = this.refs.canvas;
+    useEffect(() => {
+        const canvas = canvasRef.current;
+        const ctx = canvas.getContext("2d");
         canvas.width = 800;
         canvas.height = 450;
-        const context = this.refs.canvas.getContext("2d");
-        context.clearRect(0, 0, 800, 450)
-        // console.log(rotation)
-        // context.save();
-        // context.translate(100, 100);
-        // context.rotate(rotation, 100, 100);
-        // context.fillStyle = "#F00";
-        // context.fillRect(-50, -50, 100, 100);
-        context.restore();
-        this.createUfo(context, rotation);
-    }
+        const stars = createStars(canvas.width, canvas.height, 50)
+        createSky(ctx, stars);
+        createUfo(ctx);
+    })
 
-    createUfo(context, rotation) {
-        // context.rotate(rotation, 100, 100);
+    const createUfo = (ctx) => {
+
         // ufo top
-        context.beginPath();
-        context.arc(rotation, 100, 50, 3.15, Math.PI * 2);
-        context.fillStyle = "blue"
-        context.fill();
-        context.stroke();
-        
+        ctx.beginPath();
+        ctx.arc(400, 100, 50, 3.15, Math.PI * 2);
+        ctx.fillStyle = "blue"
+        ctx.fill();
+        ctx.stroke();
+
 
         // ufo disc
-        context.beginPath();
-        context.ellipse(rotation, 110, 20, 85, Math.PI / 2, 0, 2 * Math.PI);
-        context.fillStyle = "grey"
-        context.fill();
-        context.stroke();
+        ctx.beginPath();
+        ctx.ellipse(400, 110, 20, 85, Math.PI / 2, 0, 2 * Math.PI);
+        ctx.fillStyle = "grey"
+        ctx.fill();
+        ctx.stroke();
 
         // ufo bottom
 
-        context.beginPath();
-        context.ellipse(rotation, 130, 10, 30, Math.PI / 2, 0, 2 * Math.PI);
-        context.fillStyle = "yellow"
-        context.fill();
-        context.stroke();
+        ctx.beginPath();
+        ctx.ellipse(400, 130, 10, 30, Math.PI / 2, 0, 2 * Math.PI);
+        ctx.fillStyle = "yellow"
+        ctx.fill();
+        ctx.stroke();
 
         // ufo lights
 
-        context.beginPath();
-        context.arc(rotation - 40, 110, 5, 0, Math.PI * 2);
-        context.fillStyle = "white";
-        context.fill();
-        context.stroke();
+        ctx.beginPath();
+        ctx.arc(340, 110, 5, 0, Math.PI * 2);
+        ctx.fillStyle = "white";
+        ctx.fill();
+        ctx.stroke();
 
-        context.beginPath();
-        context.arc(rotation -10, 103, 5, 0, Math.PI * 2);
-        context.fillStyle = "white";
-        context.fill();
-        context.stroke();
+        ctx.beginPath();
+        ctx.arc(380, 103, 5, 0, Math.PI * 2);
+        ctx.fillStyle = "white";
+        ctx.fill();
+        ctx.stroke();
 
-        context.beginPath();
-        context.arc(rotation + 20, 103, 5, 0, Math.PI * 2);
-        context.fillStyle = "white";
-        context.fill();
-        context.stroke();
+        ctx.beginPath();
+        ctx.arc(420, 103, 5, 0, Math.PI * 2);
+        ctx.fillStyle = "white";
+        ctx.fill();
+        ctx.stroke();
 
-        context.beginPath();
-        context.arc(rotation + 50, 110, 5, 0, Math.PI * 2);
-        context.fillStyle = "white";
-        context.fill();
-        context.stroke();
+        ctx.beginPath();
+        ctx.arc(460, 110, 5, 0, Math.PI * 2);
+        ctx.fillStyle = "white";
+        ctx.fill();
+        ctx.stroke();
 
         // ufo light reflex
-        context.beginPath();
-        context.ellipse(rotation + 25, 70, 4, 15, Math.PI / -5, 0, 2 * Math.PI)
-        context.fillStyle = "white";
-        context.fill();
-        context.stroke();
+        ctx.beginPath();
+        ctx.ellipse(425, 70, 4, 15, Math.PI / -5, 0, 2 * Math.PI)
+        ctx.fillStyle = "white";
+        ctx.fill();
+        ctx.stroke();
     }
 
-    render() {
-        return <canvas id="canvas" ref="canvas" />
+
+ 
+
+
+    // function getOpacity(factor) {
+    //     const opacityIncrement =
+    //         (this.state.maxStarOpacity - this.state.minStarOpacity) * Math.abs(Math.sin(factor));
+    //     const opacity = this.state.minStarOpacity + opacityIncrement;
+    //     return opacity;
+    // }
+
+
+
+    function randomInt(max) {
+        return Math.floor(Math.random() * max);
     }
+
+    function createStars(width, height, spacing) {
+        const stars = [];
+
+        for (let x = 0; x < width; x += spacing) {
+            for (let y = 0; y < height; y += spacing) {
+                const star = {
+                    x: x + randomInt(spacing),
+                    y: y + randomInt(spacing)
+                };
+                stars.push(star);
+            }
+        }
+        return stars;
+    }
+
+    function createSky(context, stars) {
+        let counter = 0
+        context.fillStyle = "#030318";
+        context.fillRect(0, 0, 800, 450);
+
+        for (let i = 0; i < stars.length; i++) {
+            let factor = counter * i
+            const x = stars[i].x;
+            const y = stars[i].y;
+            const r = 1;
+            context.beginPath();
+            context.fillStyle = "white";
+            context.arc(x, y, r, 0, Math.PI * 2);
+            context.fill();
+        }
+
+    }
+
+    return <canvas id="canvas" ref={canvasRef} />
 }
 
 export default Canvas
