@@ -11,7 +11,6 @@ function Stars(width, height, spacing) {
             stars.push(star);
         }
     }
-    console.log("HELLO")
     return stars;
 }
 // function randomInt(max) {
