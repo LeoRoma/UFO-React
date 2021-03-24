@@ -1,28 +1,40 @@
 import React, { Component } from 'react';
 
-class Animations extends Component{
-    constructor(props){
+import Canvas from './Canvas';
+
+class Animations extends Component {
+    constructor(props) {
         super(props);
         this.state = {
-
+            width: 800,
+            height: 450,
+            ufoYAxis: 100,
         }
-        this.greeting = this.greeting.bind(this);
+        this.ufoMoveY = this.ufoMoveY.bind(this);
     }
 
-    componentDidMount(){
-        // this.greeting();
+    componentDidMount() {
+        // this.ufoMoveY();
     }
 
-    greeting(){
-        requestAnimationFrame(this.greeting);
-        console.log("hello");
+    ufoMoveY() {
+        const ufoYAxis = this.state.ufoYAxis + 0.5;
+        this.setState({ufoYAxis})
+        requestAnimationFrame(this.ufoMoveY);
+        console.log(this.state.ufoYAxis);
     }
-    render(){
-        return(
-            <div>
-                Hello
-            </div>
-        )
+
+    componentWillUnmount(){
+        cancelAnimationFrame(this.ufoMoveY);
+    }
+
+    render() {
+
+        return <Canvas 
+                    ufoYAxis={this.state.ufoYAxis} 
+                    width={this.state.width} 
+                    height={this.state.height} 
+                />
     }
 }
 

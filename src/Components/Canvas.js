@@ -1,15 +1,13 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect} from 'react';
 import UFO from './UFO';
 import Sky from './Sky';
 import Stars from './Stars';
 import Cloud1 from './Cloud1';
 
 
-function Canvas() {
+function Canvas(animationsInfo) {
     const canvasRef = useRef(null);
-    const [width] = useState(800);
-    const [height] = useState(450);
-    const [yAxis] = useState(100)
+    const {ufoYAxis, width, height} = animationsInfo
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -23,7 +21,7 @@ function Canvas() {
         Sky(ctx, stars);
         
      
-        UFO(ctx, yAxis);
+        UFO(ctx, ufoYAxis);
         Cloud1(ctx);
         
 
