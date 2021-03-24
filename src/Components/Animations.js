@@ -14,7 +14,7 @@ class Animations extends Component {
     }
 
     componentDidMount() {
-        this.ufoMoveY();
+        // this.ufoMoveY();
     }
 
     ufoMoveY() {
