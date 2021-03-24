@@ -2,7 +2,9 @@ import React, { useRef, useEffect} from 'react';
 import UFO from './UFO';
 import Sky from './Sky';
 import Stars from './Stars';
-import Cloud1 from './Cloud1';
+import Clouds from './Clouds';
+import TheEye from './TheEye';
+import Street from './Street'
 
 
 function Canvas(animationsInfo) {
@@ -20,29 +22,13 @@ function Canvas(animationsInfo) {
         const stars = Stars(width, height, 100)
         Sky(ctx, stars);
         
-     
+        TheEye(ctx);
+        Street(ctx, width);
         UFO(ctx, ufoYAxis);
-        Cloud1(ctx);
+        Clouds(ctx);
         
 
         ctx.restore();
-
-        // let animatedFrame
-        // const moveY = () => {
-
-        //     setYAxis(yAxis + 0.1);
-        //     // UFO(ctx, yAxis);
-        //     if (yAxis > 450) {
-        //         setYAxis(yAxis - 0.01);
-        //     }
-        //     animatedFrame = requestAnimationFrame(moveY);
-        //     console.log(yAxis)
-        // }
-        // moveY();
-
-        // return () => {
-        //     cancelAnimationFrame(animatedFrame)
-        // }
     })
 
 

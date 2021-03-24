@@ -1,5 +1,5 @@
 function Sky(ctx, stars) {
-    ctx.fillStyle = "#030318";
+    ctx.fillStyle = "#b2fefa";
     ctx.fillRect(0, 0, 800, 450);
 
     for (let i = 0; i < stars.length; i++) {
