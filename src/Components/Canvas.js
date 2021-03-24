@@ -5,7 +5,7 @@ import Stars from './Stars';
 import Clouds from './Clouds';
 import TheEye from './TheEye';
 import Street from './Street'
-
+import TowerBridge from './TowerBridge'
 
 function Canvas(animationsInfo) {
     const canvasRef = useRef(null);
@@ -21,11 +21,13 @@ function Canvas(animationsInfo) {
 
         const stars = Stars(width, height, 100)
         Sky(ctx, stars);
-        
+        Clouds(ctx);
         TheEye(ctx);
+        TowerBridge(ctx);
+       
         Street(ctx, width);
         UFO(ctx, ufoYAxis);
-        Clouds(ctx);
+       
         
 
         ctx.restore();

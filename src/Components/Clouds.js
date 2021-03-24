@@ -7,7 +7,7 @@ function Clouds(ctx) {
         ctx.arc(140, 90, 25, 3.15, Math.PI * 2);
         ctx.arc(160, 90, 20, 3.15, Math.PI * 2); 
         ctx.arc(180, 90, 15, 3.15, Math.PI * 2);
-        ctx.fillStyle = "lightblue"
+        ctx.fillStyle = "white"
         ctx.fill();
     }
 
@@ -18,18 +18,18 @@ function Clouds(ctx) {
         ctx.arc(640, 70, 20, 3.15, Math.PI * 2);
         ctx.arc(660, 70, 15, 3.15, Math.PI * 2); 
         ctx.arc(680, 70, 10, 3.15, Math.PI * 2);
-        ctx.fillStyle = "lightblue"
+        ctx.fillStyle = "white"
         ctx.fill();
     }
 
     function cloudThree(ctx){
         ctx.beginPath();
-        ctx.arc(500, 160, 5, 3.15, Math.PI * 2); 
-        ctx.arc(510, 160, 10, 3.15, Math.PI * 2);
-        ctx.arc(530, 160, 15, 3.15, Math.PI * 2);
-        ctx.arc(550, 160, 10, 3.15, Math.PI * 2); 
-        ctx.arc(560, 160, 5, 3.15, Math.PI * 2);
-        ctx.fillStyle = "lightblue"
+        ctx.arc(500, 180, 5, 3.15, Math.PI * 2); 
+        ctx.arc(510, 180, 10, 3.15, Math.PI * 2);
+        ctx.arc(530, 180, 15, 3.15, Math.PI * 2);
+        ctx.arc(550, 180, 10, 3.15, Math.PI * 2); 
+        ctx.arc(560, 180, 5, 3.15, Math.PI * 2);
+        ctx.fillStyle = "white"
         ctx.fill();
     }
 
