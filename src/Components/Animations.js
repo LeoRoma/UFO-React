@@ -14,27 +14,31 @@ class Animations extends Component {
     }
 
     componentDidMount() {
-        // this.ufoMoveY();
+        this.ufoMoveY();
     }
 
     ufoMoveY() {
-        const ufoYAxis = this.state.ufoYAxis + 0.5;
-        this.setState({ufoYAxis})
+        if (this.state.ufoYAxis > 380) {
+            const ufoYAxis = this.state.ufoYAxis - 1;
+            this.setState({ ufoYAxis })
+        }
+        const ufoYAxis = this.state.ufoYAxis + 1;
+        this.setState({ ufoYAxis })
         requestAnimationFrame(this.ufoMoveY);
         console.log(this.state.ufoYAxis);
     }
 
-    componentWillUnmount(){
+    componentWillUnmount() {
         cancelAnimationFrame(this.ufoMoveY);
     }
 
     render() {
 
-        return <Canvas 
-                    ufoYAxis={this.state.ufoYAxis} 
-                    width={this.state.width} 
-                    height={this.state.height} 
-                />
+        return <Canvas
+            ufoYAxis={this.state.ufoYAxis}
+            width={this.state.width}
+            height={this.state.height}
+        />
     }
 }
 

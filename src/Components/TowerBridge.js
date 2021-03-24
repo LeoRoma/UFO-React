@@ -16,8 +16,12 @@ function TowerBridge(ctx){
             console.log(x)
         }
     }
+    createWindows(ctx, 150, 265);
+    createWindows(ctx, 150, 305);
+    createWindows(ctx, 150, 335);
+    createWindows(ctx, 150, 375);
 
-    createWindows(ctx, 605, 265);
+    createWindows(ctx, 605, 265); // right building
     createWindows(ctx, 605, 305);
     createWindows(ctx, 605, 335);
     createWindows(ctx, 605, 375);
