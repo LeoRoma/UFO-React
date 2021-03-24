@@ -2,12 +2,14 @@ import React, { useRef, useEffect, useState } from 'react';
 import UFO from './UFO';
 import Sky from './Sky';
 import Stars from './Stars';
+import Cloud1 from './Cloud1';
+
 
 function Canvas() {
     const canvasRef = useRef(null);
     const [width] = useState(800);
     const [height] = useState(450);
-    const [yAxis, setYAxis] = useState(100)
+    const [yAxis] = useState(100)
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -19,30 +21,30 @@ function Canvas() {
 
         const stars = Stars(width, height, 100)
         Sky(ctx, stars);
-
-   
-        // UFO(ctx, yAxis);
-  
-
+        
+     
         UFO(ctx, yAxis);
+        Cloud1(ctx);
+        
+
         ctx.restore();
-  
-        let animatedFrame
-        const moveY = () => {
-           
-            setYAxis(yAxis + 0.01);
-    
-            if (yAxis > 450) {
-                setYAxis(yAxis - 0.01);
-            }
-            animatedFrame = window.requestAnimationFrame(moveY);
-            console.log(yAxis)
-        }
-          moveY();
-      
-        return () => {
-            window.cancelAnimationFrame(animatedFrame)
-        }
+
+        // let animatedFrame
+        // const moveY = () => {
+
+        //     setYAxis(yAxis + 0.1);
+        //     // UFO(ctx, yAxis);
+        //     if (yAxis > 450) {
+        //         setYAxis(yAxis - 0.01);
+        //     }
+        //     animatedFrame = requestAnimationFrame(moveY);
+        //     console.log(yAxis)
+        // }
+        // moveY();
+
+        // return () => {
+        //     cancelAnimationFrame(animatedFrame)
+        // }
     })
 
 
