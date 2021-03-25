@@ -18,7 +18,7 @@ class Animations extends Component {
     }
 
     ufoMoveY() {
-        if (this.state.ufoYAxis > 380) {
+        if (this.state.ufoYAxis > 390) {
             const ufoYAxis = this.state.ufoYAxis - 1;
             this.setState({ ufoYAxis })
         }
