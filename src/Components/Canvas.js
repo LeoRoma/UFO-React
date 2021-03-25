@@ -17,8 +17,9 @@ function Canvas(animationsInfo) {
         canvas.width = width;
         canvas.height = height;
 
-        ctx.clearRect(0, 0, width, height);
-
+        // ctx.clearRect(0, 0, width, height);
+        // ctx.restore();
+        
         const stars = Stars(width, height, 100)
         Sky(ctx, stars);
         Clouds(ctx);
@@ -27,10 +28,6 @@ function Canvas(animationsInfo) {
        
         Street(ctx, width);
         UFO(ctx, ufoYAxis);
-       
-        
-
-        ctx.restore();
     })
 
 

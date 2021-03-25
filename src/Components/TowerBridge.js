@@ -1,8 +1,15 @@
 function TowerBridge(ctx) {
-    ctx.fillStyle = "#ffbf00";
-    ctx.fillRect(335, 200, 130, 200); // middle building
-    ctx.fillRect(120, 250, 80, 150); // left building
-    ctx.fillRect(575, 250, 80, 150); // right building
+    function createBridge(ctx, x, y, width, height) {
+        ctx.fillStyle = "#f9a602";
+        ctx.fillRect(x, y, width, height);
+    }
+
+    function createBuilding(ctx) {
+        ctx.fillStyle = "#eb9605";
+        ctx.fillRect(335, 200, 130, 200); // middle building
+        ctx.fillRect(120, 250, 80, 150); // left building
+        ctx.fillRect(575, 250, 80, 150); // right building
+    }
 
     function createWindows(ctx, x, y, windowsDistance, width, height) {
         let windowsNumber = 5;
@@ -10,7 +17,6 @@ function TowerBridge(ctx) {
         for (let i = 0; i < windowsNumber; i++) {
             ctx.fillRect(x, y, width, height);
             x += windowsDistance;
-            console.log(x)
         }
     }
 
@@ -39,6 +45,7 @@ function TowerBridge(ctx) {
         ctx.lineWidth = lineWidth;
         ctx.moveTo(moveX, moveY);
         ctx.lineTo(lineX, lineY);
+        ctx.strokeStyle = "black";
         ctx.stroke();
         ctx.closePath();
     }
@@ -142,8 +149,51 @@ function TowerBridge(ctx) {
         createTip(ctx, 613.5, 190, 2, 10) // top tip
     }
 
-    createVerticalLines(ctx)
-    createHorizontalLines(ctx)
+    function createBridgeHolder(ctx, moveX, moveY, lineX, lineY, lineWidth) {
+        ctx.beginPath();
+        ctx.lineWidth = lineWidth;
+        ctx.moveTo(moveX, moveY);
+        ctx.lineTo(lineX, lineY);
+        ctx.strokeStyle = "#f9a602";
+        ctx.stroke();
+        ctx.closePath();
+    }
+
+    function createBridgeHolders(ctx){
+        let moveX = 220;
+        let moveY = 310;
+        let ropesNumber = 6; 
+        for(let i = 0; i< ropesNumber; i++){
+            createBridgeHolder(ctx, moveX, moveY, moveX, 380, 2);
+            moveX += 20;
+            moveY -= 10;
+        }
+    }
+
+    function createBridgeHoldersTwo(ctx){
+        let moveX = 485;
+        let moveY = 360;
+        let ropesNumber = 6; 
+        for(let i = 0; i< ropesNumber; i++){
+            createBridgeHolder(ctx, moveX, moveY, moveX, 380, 2);
+            moveX += 15;
+            moveY -= 6.5;
+        }
+    }
+    createBridgeHolder(ctx, 198, 320, 337, 258, 10); // rope between left and middle building
+
+    createBridgeHolder(ctx, 458, 270, 587, 320, 30); // between middle and right building
+    createBridgeHolder(ctx, 458, 370, 587, 320, 3);
+
+
+    createBridge(ctx, 200, 380, 200, 20);
+    createBridge(ctx, 420, 380, 200, 20);
+
+    createBridgeHoldersTwo(ctx)
+    createBridgeHolders(ctx);
+    createBuilding(ctx);
+    createVerticalLines(ctx);
+    createHorizontalLines(ctx);
     createRoofs(ctx);
     createAllWindows(ctx);
 }
