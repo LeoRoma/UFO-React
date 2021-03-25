@@ -1,9 +1,4 @@
 function TowerBridge(ctx) {
-    function createBridge(ctx, x, y, width, height) {
-        ctx.fillStyle = "#f9a602";
-        ctx.fillRect(x, y, width, height);
-    }
-
     function createBuilding(ctx) {
         ctx.fillStyle = "#eb9605";
         ctx.fillRect(335, 200, 130, 200); // middle building
@@ -149,6 +144,11 @@ function TowerBridge(ctx) {
         createTip(ctx, 613.5, 190, 2, 10) // top tip
     }
 
+    function createBridge(ctx, x, y, width, height) {
+        ctx.fillStyle = "#f9a602";
+        ctx.fillRect(x, y, width, height);
+    }
+    
     function createBridgeHolder(ctx, moveX, moveY, lineX, lineY, lineWidth) {
         ctx.beginPath();
         ctx.lineWidth = lineWidth;

@@ -6,6 +6,7 @@ import Clouds from './Clouds';
 import TheEye from './TheEye';
 import Street from './Street'
 import TowerBridge from './TowerBridge'
+import BigBen from './BigBen'
 
 function Canvas(animationsInfo) {
     const canvasRef = useRef(null);
@@ -24,6 +25,7 @@ function Canvas(animationsInfo) {
         Sky(ctx, stars);
         Clouds(ctx);
         TheEye(ctx);
+        BigBen(ctx);
         TowerBridge(ctx);
        
         Street(ctx, width);
