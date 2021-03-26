@@ -12,12 +12,13 @@ import Street from './Street';
 import TowerBridge from './TowerBridge';
 import UFO from './UFO';
 import ShootingStar from './ShootingStar';
+import Tank from './Tank';
 
 
 
 function Canvas(animationsInfo) {
     const canvasRef = useRef(null);
-    const {ufoYAxis, width, height, shootingStarX, shootingStarY} = animationsInfo
+    const {ufoYAxis, width, height, shootingStarX, shootingStarY, tankX} = animationsInfo
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -41,6 +42,7 @@ function Canvas(animationsInfo) {
         CallBox(ctx);
         UFO(ctx, ufoYAxis);
         ShootingStar(ctx, shootingStarX, shootingStarY);
+        Tank(ctx, tankX)
         ctx.restore();
     })
 

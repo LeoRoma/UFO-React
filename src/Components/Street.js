@@ -10,7 +10,7 @@ function Street(ctx, width) {
 
     
     function createStreet(ctx, width) {
-        ctx.fillStyle = "black"
+        ctx.fillStyle = "#191919"
         ctx.fillRect(0, 400, 800, 200);
         createLines(ctx, width)
     }

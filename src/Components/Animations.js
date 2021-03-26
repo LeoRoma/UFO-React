@@ -8,28 +8,33 @@ class Animations extends Component {
         this.state = {
             width: 800,
             height: 450,
-            ufoYAxis: 100,
+            ufoYAxis: 0,
             shootingStarX: -100,
-            shootingStarY: 200
+            shootingStarY: 200,
+            tankX: 820
         }
-        this.ufoMoveY = this.ufoMoveY.bind(this);
+        this.moveUFOY = this.moveUFOY.bind(this);
         this.shootingStarMove = this.shootingStarMove.bind(this);
+        this.moveTank = this.moveTank.bind(this);
     }
 
     componentDidMount() {
-        this.ufoMoveY();
+        this.moveUFOY();
         this.shootingStarMove();
+        // this.moveTank();
     }
 
-    ufoMoveY() {
+    moveUFOY() {
         if (this.state.ufoYAxis > 390) {
             const ufoYAxis = this.state.ufoYAxis - 2;
             this.setState({ ufoYAxis });
+            this.moveTank();
         }
         const ufoYAxis = this.state.ufoYAxis + 2;
         this.setState({ ufoYAxis });
-        requestAnimationFrame(this.ufoMoveY);
-        console.log(this.state.ufoYAxis);
+        requestAnimationFrame(this.moveUFOY);
+
+        // console.log(this.state.ufoYAxis);
     }
 
     shootingStarMove() {
@@ -38,9 +43,21 @@ class Animations extends Component {
         this.setState({ shootingStarX, shootingStarY });
         requestAnimationFrame(this.shootingStarMove);
     }
+
+    moveTank() {
+        if(this.state.tankX < 500){
+            const tankX = this.state.tankX + 0.1;
+            this.setState({ tankX });
+        }
+        const tankX = this.state.tankX - 0.1;
+        this.setState({ tankX });
+        requestAnimationFrame(this.moveTank)
+    }
+
     componentWillUnmount() {
-        cancelAnimationFrame(this.ufoMoveY);
+        cancelAnimationFrame(this.moveUFOY);
         cancelAnimationFrame(this.shootingStarMove);
+        cancelAnimationFrame(this.moveTank);
     }
 
     render() {
@@ -51,6 +68,7 @@ class Animations extends Component {
             height={this.state.height}
             shootingStarX={this.state.shootingStarX}
             shootingStarY={this.state.shootingStarY}
+            tankX={this.state.tankX}
         />
     }
 }
