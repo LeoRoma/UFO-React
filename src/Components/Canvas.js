@@ -1,18 +1,23 @@
 import React, { useRef, useEffect} from 'react';
 
-import UFO from './UFO';
-import Sky from './Sky';
-import Stars from './Stars';
+import BigBen from './BigBen';
+import CallBox from './CallBox';
 import Clouds from './Clouds';
+import Moon from './Moon';
+import Sky from './Sky';
+// import Stars from './Stars';
+
 import TheEye from './TheEye';
 import Street from './Street';
 import TowerBridge from './TowerBridge';
-import BigBen from './BigBen';
-import CallBox from './CallBox';
+import UFO from './UFO';
+import ShootingStar from './ShootingStar';
+
+
 
 function Canvas(animationsInfo) {
     const canvasRef = useRef(null);
-    const {ufoYAxis, width, height} = animationsInfo
+    const {ufoYAxis, width, height, shootingStarX, shootingStarY} = animationsInfo
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -20,30 +25,24 @@ function Canvas(animationsInfo) {
         canvas.width = width;
         canvas.height = height;
 
-        // ctx.clearRect(0, 0, width, height);
-        // ctx.restore();
+        ctx.clearRect(0, 0, width, height);
         
-        const stars = Stars(width, height, 100)
-        Sky(ctx, stars);
+        // const stars = Stars(width, height);
+
+        Sky(ctx);
+     
+        Moon(ctx);
         Clouds(ctx);
         TheEye(ctx);
         BigBen(ctx);
         TowerBridge(ctx);
-       
+      
         Street(ctx, width);
         CallBox(ctx);
         UFO(ctx, ufoYAxis);
+        ShootingStar(ctx, shootingStarX, shootingStarY);
+        ctx.restore();
     })
-
-
-
-
-    // function getOpacity(factor) {
-    //     const opacityIncrement =
-    //         (this.state.maxStarOpacity - this.state.minStarOpacity) * Math.abs(Math.sin(factor));
-    //     const opacity = this.state.minStarOpacity + opacityIncrement;
-    //     return opacity;
-    // }
 
     return <canvas id="canvas" ref={canvasRef} />
 }
