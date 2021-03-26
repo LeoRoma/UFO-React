@@ -1,12 +1,14 @@
 import React, { useRef, useEffect} from 'react';
+
 import UFO from './UFO';
 import Sky from './Sky';
 import Stars from './Stars';
 import Clouds from './Clouds';
 import TheEye from './TheEye';
-import Street from './Street'
-import TowerBridge from './TowerBridge'
-import BigBen from './BigBen'
+import Street from './Street';
+import TowerBridge from './TowerBridge';
+import BigBen from './BigBen';
+import CallBox from './CallBox';
 
 function Canvas(animationsInfo) {
     const canvasRef = useRef(null);
@@ -29,6 +31,7 @@ function Canvas(animationsInfo) {
         TowerBridge(ctx);
        
         Street(ctx, width);
+        CallBox(ctx);
         UFO(ctx, ufoYAxis);
     })
 

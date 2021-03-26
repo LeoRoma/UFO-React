@@ -15,9 +15,10 @@ function Street(ctx, width) {
         createLines(ctx, width)
     }
 
-    ctx.fillStyle = "grey";
-    ctx.fillRect(0, 395, 800, 5);
     createStreet(ctx, width)
+    ctx.fillStyle = "grey";
+    ctx.fillRect(0, 395, width, 10);
+  
 }
 
 export default Street;

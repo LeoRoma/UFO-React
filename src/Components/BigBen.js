@@ -106,14 +106,17 @@ function BigBen(ctx) {
         createBigBenDetail(ctx, 660, 145, 4, 15, 12, 7); // clock's top
         createBigBenDetail(ctx, 684, 110, 4, 10, 5, 7); // clock's roof
 
-        createHorizontaLine(ctx, 660, 385, 740, 385); // bottom line
+        // createHorizontaLine(ctx, 660, 385, 740, 385); // bottom line
         createHorizontaLine(ctx, 660, 375, 740, 375); 
 
         createHorizontaLine(ctx, 660, 335, 740, 335); // mid line
-        createHorizontaLine(ctx, 660, 345, 740, 345); 
+        // createHorizontaLine(ctx, 660, 345, 740, 345); 
 
-        createHorizontaLine(ctx, 660, 295, 740, 295); // mid line
-        createHorizontaLine(ctx, 660, 305, 740, 305);
+        createHorizontaLine(ctx, 660, 295, 740, 295); // mid 2nd line
+        // createHorizontaLine(ctx, 660, 305, 740, 305);
+
+        // createHorizontaLine(ctx, 660, 250, 740, 250); // top line
+        createHorizontaLine(ctx, 660, 260, 740, 260); // top line
     }    
 
     createBigBenSections(ctx)
