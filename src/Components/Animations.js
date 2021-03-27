@@ -9,9 +9,9 @@ class Animations extends Component {
             width: 800,
             height: 450,
             ufoYAxis: 0,
-            shootingStarX: -50,
-            shootingStarY: 200,
-            tankX: 860
+            shootingStarX: -70,
+            shootingStarY: 300,
+            tankX: 830
         }
         this.moveUFOY = this.moveUFOY.bind(this);
         this.moveShootingStar = this.moveShootingStar.bind(this);
@@ -19,9 +19,9 @@ class Animations extends Component {
     }
 
     componentDidMount() {
-        this.moveUFOY();
-        this.moveShootingStar();
-        this.moveTank();
+        // this.moveUFOY();
+        // this.moveShootingStar();
+
     }
 
     moveUFOY() {
@@ -38,8 +38,8 @@ class Animations extends Component {
     }
 
     moveShootingStar() {
-        const shootingStarX = this.state.shootingStarX + 3.5;
-        const shootingStarY = this.state.shootingStarY - 3.5;
+        const shootingStarX = this.state.shootingStarX + 7.5;
+        const shootingStarY = this.state.shootingStarY - 5.5;
         this.setState({ shootingStarX, shootingStarY });
         requestAnimationFrame(this.moveShootingStar);
     }

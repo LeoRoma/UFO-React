@@ -36,7 +36,7 @@ function Tank(ctx, tankX) {
         for(let i = 0; i < wheelsNumber; i++){
             ctx.beginPath();
             ctx.arc(tankX + 22, 420, 5, 0, Math.PI * 2);
-            ctx.fillStyle = "white";
+            ctx.fillStyle = "grey";
             ctx.fill();
             ctx.stroke();
             ctx.closePath(); 
@@ -44,6 +44,14 @@ function Tank(ctx, tankX) {
         }
 
     }
+
+    ctx.beginPath();
+    ctx.ellipse(tankX - 15, 360, 4, 6, Math.PI / 5, 0, 2 * Math.PI) // yAxis = 70
+    ctx.fillStyle = "black";
+    ctx.fill();
+    ctx.stroke();
+    ctx.closePath();
+
     createWheels(ctx, tankX)
 }
 

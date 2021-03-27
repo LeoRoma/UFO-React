@@ -26,6 +26,7 @@ function Canvas(animationsInfo) {
         canvas.width = width;
         canvas.height = height;
 
+
         ctx.clearRect(0, 0, width, height);
 
         Sky(ctx);
@@ -47,7 +48,7 @@ function Canvas(animationsInfo) {
 
     })
 
-    return <canvas id="canvas" ref={canvasRef} width="100%" height="100%"/>
+    return <canvas id="canvas" ref={canvasRef} />
 }
 
 export default Canvas
