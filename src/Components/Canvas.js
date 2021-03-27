@@ -25,10 +25,6 @@ function Canvas(animationsInfo) {
         const ctx = canvas.getContext("2d");
         canvas.width = width;
         canvas.height = height;
-        if(window.innerWidth <= 800){
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
 
         ctx.clearRect(0, 0, width, height);
 
@@ -51,7 +47,7 @@ function Canvas(animationsInfo) {
 
     })
 
-    return <canvas id="canvas" ref={canvasRef} />
+    return <canvas id="canvas" ref={canvasRef} width="100%" height="100%"/>
 }
 
 export default Canvas
