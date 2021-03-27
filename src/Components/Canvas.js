@@ -5,7 +5,7 @@ import CallBox from './CallBox';
 import Clouds from './Clouds';
 import Moon from './Moon';
 import Sky from './Sky';
-// import Stars from './Stars';
+import Stars from './Stars';
 
 import TheEye from './TheEye';
 import Street from './Street';
@@ -18,8 +18,10 @@ import Tank from './Tank';
 
 function Canvas(animationsInfo) {
     const canvasRef = useRef(null);
-    const {ufoYAxis, width, height, shootingStarX, shootingStarY, tankX} = animationsInfo
+    const {ufoYAxis, width, height, shootingStarX, shootingStarY, tankX} = animationsInfo;
 
+ 
+    // console.log(stars);
     useEffect(() => {
         const canvas = canvasRef.current;
         const ctx = canvas.getContext("2d");
@@ -28,10 +30,10 @@ function Canvas(animationsInfo) {
 
         ctx.clearRect(0, 0, width, height);
         
-        // const stars = Stars(width, height);
+       
 
         Sky(ctx);
-     
+        Stars(ctx);
         Moon(ctx);
         Clouds(ctx);
         TheEye(ctx);

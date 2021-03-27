@@ -9,19 +9,19 @@ class Animations extends Component {
             width: 800,
             height: 450,
             ufoYAxis: 0,
-            shootingStarX: -100,
+            shootingStarX: -50,
             shootingStarY: 200,
-            tankX: 820
+            tankX: 860
         }
         this.moveUFOY = this.moveUFOY.bind(this);
-        this.shootingStarMove = this.shootingStarMove.bind(this);
+        this.moveShootingStar = this.moveShootingStar.bind(this);
         this.moveTank = this.moveTank.bind(this);
     }
 
     componentDidMount() {
         this.moveUFOY();
-        this.shootingStarMove();
-        // this.moveTank();
+        this.moveShootingStar();
+        this.moveTank();
     }
 
     moveUFOY() {
@@ -37,26 +37,26 @@ class Animations extends Component {
         // console.log(this.state.ufoYAxis);
     }
 
-    shootingStarMove() {
-        const shootingStarX = this.state.shootingStarX + 2.5;
-        const shootingStarY = this.state.shootingStarY - 0.5;
+    moveShootingStar() {
+        const shootingStarX = this.state.shootingStarX + 3.5;
+        const shootingStarY = this.state.shootingStarY - 3.5;
         this.setState({ shootingStarX, shootingStarY });
-        requestAnimationFrame(this.shootingStarMove);
+        requestAnimationFrame(this.moveShootingStar);
     }
 
     moveTank() {
-        if(this.state.tankX < 500){
-            const tankX = this.state.tankX + 0.1;
+        if (this.state.tankX < 550) {
+            const tankX = this.state.tankX + 0.2;
             this.setState({ tankX });
         }
-        const tankX = this.state.tankX - 0.1;
+        const tankX = this.state.tankX - 0.2;
         this.setState({ tankX });
         requestAnimationFrame(this.moveTank)
     }
 
     componentWillUnmount() {
         cancelAnimationFrame(this.moveUFOY);
-        cancelAnimationFrame(this.shootingStarMove);
+        cancelAnimationFrame(this.moveShootingStar);
         cancelAnimationFrame(this.moveTank);
     }
 
