@@ -1,9 +1,9 @@
 function TowerBridge(ctx) {
     function createBuilding(ctx) {
         ctx.fillStyle = "#eb9605";
-        ctx.fillRect(335, 200, 130, 200); // middle building
-        ctx.fillRect(120, 250, 80, 150); // left building
-        ctx.fillRect(575, 250, 80, 150); // right building
+        ctx.fillRect(350, 220, 100, 180); // middle building
+        ctx.fillRect(140, 260, 70, 140); // left building
+        ctx.fillRect(570, 260, 70, 140); // right building
     }
 
     function createWindows(ctx, x, y, windowsDistance, width, height) {
@@ -17,22 +17,22 @@ function TowerBridge(ctx) {
 
     function createAllWindows(ctx) {
         // left building
-        createWindows(ctx, 139, 265, 10, 4, 20);
-        createWindows(ctx, 139, 305, 10, 4, 20);
-        createWindows(ctx, 139, 335, 10, 4, 20);
-        createWindows(ctx, 139, 375, 10, 4, 20);
+        createWindows(ctx, 153, 267, 10, 4, 20);
+        createWindows(ctx, 153, 305, 10, 4, 20);
+        createWindows(ctx, 153, 335, 10, 4, 20);
+        createWindows(ctx, 153, 375, 10, 4, 20);
 
         // building in the middle
-        createWindows(ctx, 368, 220, 15, 6, 30);
-        createWindows(ctx, 368, 270, 15, 6, 30);
-        createWindows(ctx, 368, 310, 15, 6, 30);
-        createWindows(ctx, 368, 360, 15, 6, 30);
+        createWindows(ctx, 368, 230, 15, 6, 25);
+        createWindows(ctx, 368, 280, 15, 6, 25);
+        createWindows(ctx, 368, 315, 15, 6, 25);
+        createWindows(ctx, 368, 360, 15, 6, 25);
 
         // right building
-        createWindows(ctx, 594, 265, 10, 4, 20);
-        createWindows(ctx, 594, 305, 10, 4, 20);
-        createWindows(ctx, 594, 335, 10, 4, 20);
-        createWindows(ctx, 594, 375, 10, 4, 20);
+        createWindows(ctx, 583, 267, 10, 4, 20);
+        createWindows(ctx, 583, 305, 10, 4, 20);
+        createWindows(ctx, 583, 335, 10, 4, 20);
+        createWindows(ctx, 583, 375, 10, 4, 20);
     }
 
     function createVerticalLine(ctx, moveX, moveY, lineX, lineY, lineWidth) {
@@ -56,39 +56,39 @@ function TowerBridge(ctx) {
 
     function createVerticalLines(ctx) {
         // left building
-        createVerticalLine(ctx, 128, 250, 128, 400, 1);
-        createVerticalLine(ctx, 191, 250, 191, 400, 1);
+        createVerticalLine(ctx, 148, 260, 148, 400, 1);
+        createVerticalLine(ctx, 202, 260, 202, 400, 1);
         // buidling in the middle
-        createVerticalLine(ctx, 347, 200, 347, 400, 2);
-        createVerticalLine(ctx, 452, 200, 452, 400, 2);
+        createVerticalLine(ctx, 360, 220, 360, 400, 2);
+        createVerticalLine(ctx, 440, 220, 440, 400, 2);
         // right building
-        createVerticalLine(ctx, 583, 250, 583, 400, 1);
-        createVerticalLine(ctx, 646, 250, 646, 400, 1);
+        createVerticalLine(ctx, 578, 260, 578, 400, 1);
+        createVerticalLine(ctx, 632, 260, 632, 400, 1);
     }
 
     function createHorizontalLines(ctx) {
         // left building
-        createHorizontalLine(ctx, 120, 292, 200, 292, 1); // top lines
-        createHorizontalLine(ctx, 120, 298, 200, 298, 1);
+        createHorizontalLine(ctx, 140, 292, 210, 292, 1); // top lines
+        createHorizontalLine(ctx, 140, 298, 210, 298, 1);
 
-        createHorizontalLine(ctx, 120, 362, 200, 362, 1); // bottom lines
-        createHorizontalLine(ctx, 120, 368, 200, 368, 1);
+        createHorizontalLine(ctx, 140, 362, 210, 362, 1); // bottom lines
+        createHorizontalLine(ctx, 140, 368, 210, 368, 1);
 
         // buidling in the middle
 
-        createHorizontalLine(ctx, 335, 257, 466, 257, 2); // top lines
-        createHorizontalLine(ctx, 335, 264, 466, 264, 2);
+        createHorizontalLine(ctx, 350, 262, 450, 262, 2); // top lines
+        createHorizontalLine(ctx, 350, 270, 450, 270, 2);
 
-        createHorizontalLine(ctx, 335, 348, 466, 348, 2); // bottom lines
-        createHorizontalLine(ctx, 335, 355, 466, 355, 2);
+        createHorizontalLine(ctx, 350, 348, 450, 348, 2); // bottom lines
+        createHorizontalLine(ctx, 350, 355, 450, 355, 2);
 
 
         // right building
-        createHorizontalLine(ctx, 575, 292, 655, 292, 1); // top lines
-        createHorizontalLine(ctx, 575, 298, 655, 298, 1);
+        createHorizontalLine(ctx, 570, 292, 640, 292, 1); // top lines
+        createHorizontalLine(ctx, 570, 298, 640, 298, 1);
 
-        createHorizontalLine(ctx, 575, 362, 655, 362, 1); // bottom lines
-        createHorizontalLine(ctx, 575, 368, 655, 368, 1);
+        createHorizontalLine(ctx, 570, 362, 640, 362, 1); // bottom lines
+        createHorizontalLine(ctx, 570, 368, 640, 368, 1);
     }
 
     function createTriangle(ctx, moveX, moveY, lineOneX, lineOneY, lineTwoX, lineTwoY) {
@@ -114,34 +114,34 @@ function TowerBridge(ctx) {
 
     function createRoofs(ctx) {
         // left building
-        createTriangle(ctx, 160, 220, 120, 250, 200, 250);
-        createSquare(ctx, 120, 230, 10, 20); // left side
-        createTip(ctx, 124, 220, 2, 10); // left tip
-        createSquare(ctx, 190, 230, 10, 20); // right side
-        createTip(ctx, 194, 220, 2, 10); // right tip 
-        createSquare(ctx, 152, 210, 15, 15); // top 
-        createSquare(ctx, 154.5, 200, 10, 10);
-        createTip(ctx, 159, 190, 2, 10) // top tip
+        createTriangle(ctx, 175, 240, 140, 260, 210, 260);
+        createSquare(ctx, 140, 240, 10, 20); // left side
+        createTip(ctx, 144, 230, 2, 10); // left tip
+        createSquare(ctx, 200, 240, 10, 20); // right side
+        createTip(ctx, 204, 230, 2, 10); // right tip 
+        createSquare(ctx, 166, 230, 15, 15); // top 
+        createSquare(ctx, 168.5, 220, 10, 10);
+        createTip(ctx, 173, 210, 2, 10) // top tip
 
         // building in the middle
-        createTriangle(ctx, 400, 150, 335, 200, 465, 200);
-        createSquare(ctx, 335, 180, 15, 20); // left side
-        createTip(ctx, 342, 165, 3, 15); // left tip
-        createSquare(ctx, 450, 180, 15, 20); // right side
-        createTip(ctx, 456, 165, 3, 15); // right tip 
-        createSquare(ctx, 387, 134, 25, 25); // top 
-        createSquare(ctx, 391, 117, 17, 17);
-        createTip(ctx, 398, 100, 4, 20) // top tip
+        createTriangle(ctx, 400, 180, 350, 220, 450, 220);
+        createSquare(ctx, 350, 200, 15, 20); // left side
+        createTip(ctx, 356, 185, 3, 15); // left tip
+        createSquare(ctx, 435, 200, 15, 20); // right side
+        createTip(ctx, 441, 185, 3, 15); // right tip 
+        createSquare(ctx, 387, 164, 25, 25); // top 
+        createSquare(ctx, 391, 147, 17, 17);
+        createTip(ctx, 398, 130, 4, 20) // top tip
 
         // right in the middle
-        createTriangle(ctx, 615, 220, 575, 250, 655, 250);
-        createSquare(ctx, 575, 230, 10, 20); // left side
-        createTip(ctx, 579, 220, 2, 10); // left tip
-        createSquare(ctx, 645, 230, 10, 20); // right side
-        createTip(ctx, 649, 220, 2, 10); // right tip 
-        createSquare(ctx, 607, 210, 15, 15); // top 
-        createSquare(ctx, 609.5, 200, 10, 10);
-        createTip(ctx, 613.5, 190, 2, 10) // top tip
+        createTriangle(ctx, 605, 240, 570, 260, 640, 260);
+        createSquare(ctx, 570, 240, 10, 20); // left side
+        createTip(ctx, 574, 230, 2, 10); // left tip
+        createSquare(ctx, 630, 240, 10, 20); // right side
+        createTip(ctx, 634, 230, 2, 10); // right tip 
+        createSquare(ctx, 597, 230, 15, 15); // top 
+        createSquare(ctx, 599.5, 220, 10, 10);
+        createTip(ctx, 603.5, 210, 2, 10) // top tip
     }
 
     function createBridge(ctx, x, y, width, height) {
@@ -160,30 +160,30 @@ function TowerBridge(ctx) {
     }
 
     function createBridgeHolders(ctx){
-        let moveX = 220;
+        let moveX = 230;
         let moveY = 310;
         let ropesNumber = 6; 
         for(let i = 0; i< ropesNumber; i++){
             createBridgeHolder(ctx, moveX, moveY, moveX, 380, 2);
             moveX += 20;
-            moveY -= 10;
+            moveY -= 8;
         }
     }
 
     function createBridgeHoldersTwo(ctx){
-        let moveX = 485;
-        let moveY = 360;
+        let moveX = 465;
+        let moveY = 359;
         let ropesNumber = 6; 
         for(let i = 0; i< ropesNumber; i++){
             createBridgeHolder(ctx, moveX, moveY, moveX, 380, 2);
-            moveX += 15;
-            moveY -= 6.5;
+            moveX += 18;
+            moveY -= 6;
         }
     }
-    createBridgeHolder(ctx, 198, 320, 337, 258, 10); // rope between left and middle building
+    createBridgeHolder(ctx, 198, 320, 355, 265, 10); // rope between left and middle building
 
-    createBridgeHolder(ctx, 458, 270, 587, 320, 30); // between middle and right building
-    createBridgeHolder(ctx, 458, 370, 587, 320, 3);
+    createBridgeHolder(ctx, 440, 275, 587, 320, 30); // between middle and right building
+    createBridgeHolder(ctx, 420, 370, 587, 320, 3); // between middle and right building bottom
 
 
     createBridge(ctx, 200, 380, 200, 20);

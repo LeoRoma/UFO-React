@@ -19,9 +19,9 @@ class Animations extends Component {
     }
 
     componentDidMount() {
-        this.moveUFOY();
-        this.moveShootingStar();
-        this.moveTank();
+        // this.moveUFOY();
+        // this.moveShootingStar();
+        // this.moveTank();
     }
 
     moveUFOY() {
