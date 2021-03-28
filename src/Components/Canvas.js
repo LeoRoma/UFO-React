@@ -47,18 +47,17 @@ function Canvas(animationsInfo) {
         Tank(ctx, tankX)
         ctx.restore();
 
-        const handleResize = e => {
-            if (window.innerWidth <= 800) {
-                ctx.canvas.width = window.innerWidth;
-                ctx.canvas.height = window.innerHeight / 3;
-            }
-        };
+        // const handleResize = e => {
+        //     if (window.innerWidth <= 800) {
+        //         ctx.canvas.width = window.innerWidth;
+        //         ctx.canvas.height = window.innerHeight / 3;
+        //     }
+        // };
 
-        handleResize();
-        window.addEventListener("resize", handleResize);
+        // handleResize();
+        // window.addEventListener("resize", handleResize);
 
-        return () => window.removeEventListener("resize", handleResize);
-
+        // return () => window.removeEventListener("resize", handleResize);
     })
 
     return <canvas id="canvas" ref={canvasRef} />
