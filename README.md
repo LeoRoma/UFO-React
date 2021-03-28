@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# London UFO
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+- This is my first animation by using canvas, built in React
 
-In the project directory, you can run:
+## Instruction
 
-### `npm start`
+```
+Animate a UFO landing
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Must include:
+- A sky
+- A ground
+- A UFO that starts in the sky and lands in the ground
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Consider:
+- The detail of the sky.
+- The detail of the ground.
+- The movement of the UFO.
+- Be as creative as you can.
 
-### `npm test`
+Tech requirements:
+- The app must be deployed.
+- The app must be built in react and use react’s state management.
+- The canvas should be 800px by 450px.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Must not include:
+- Any bitmaps (images) - everything included should be created in js and css.
 
-### `npm run build`
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Approach
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+I have started first to researching how to create a canvas with React.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+After I was searching for documentation that will let me to animate any objects, I have found two different solutions, one is using React Hooks, and the other one is using React Class component by updating the states. I have decided to use the Class Component, so I could wrap the animations in Animations Component.
 
-### `npm run eject`
+Once I have understood how to draw different objects, I have exctracted each object that I have draw in different functions, which allowed me to manage each object separetely.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+At the last I have animated the object such as UFO, Shooting Star and Tank.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Link
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The project is deployed in Netlify, this is the following link: https://londonufo.netlify.app/
+Is recommended to open the web page on a screen that is bigger thank 800 x 450 pixels.

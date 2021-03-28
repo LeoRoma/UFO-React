@@ -49,7 +49,8 @@ function Canvas(animationsInfo) {
         // const handleResize = e => {
         //     if (window.innerWidth <= 800) {
         //         ctx.canvas.width = window.innerWidth;
-        //         ctx.canvas.height = window.innerHeight / 3;
+        //         ctx.canvas.height = window.innerHeight;
+        //         ctx.clearRect(0, 0, width, height);
         //     }
         // };
 
