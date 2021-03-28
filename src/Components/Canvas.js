@@ -14,7 +14,7 @@ import TowerBridge from './TowerBridge';
 import UFO from './UFO';
 import UFOOne from './UFOOne';
 import UFOTwo from './UFOTwo';
- 
+
 
 function Canvas(animationsInfo) {
     const canvasRef = useRef(null);
@@ -30,7 +30,7 @@ function Canvas(animationsInfo) {
         ctx.clearRect(0, 0, width, height);
 
         Sky(ctx);
-       
+
         Stars(ctx);
         Moon(ctx);
         UFOOne(ctx, ufoOneX);
@@ -46,6 +46,19 @@ function Canvas(animationsInfo) {
         ShootingStar(ctx, shootingStarX, shootingStarY);
         Tank(ctx, tankX)
         ctx.restore();
+
+        const handleResize = e => {
+            if (window.innerWidth <= 800) {
+                ctx.canvas.width = window.innerWidth;
+                ctx.canvas.height = window.innerHeight / 5;
+            }
+        };
+
+        handleResize();
+        window.addEventListener("resize", handleResize);
+
+        return () => window.removeEventListener("resize", handleResize);
+
     })
 
     return <canvas id="canvas" ref={canvasRef} />

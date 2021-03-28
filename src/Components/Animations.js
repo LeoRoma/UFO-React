@@ -25,11 +25,6 @@ class Animations extends Component {
 
     componentDidMount() {
         this.moveUFOs();
-        // this.moveUFOOneX()
-        // this.moveUFOTwoX();
-        // this.moveUFOY();
-        // this.moveShootingStar();
-
     }
 
     moveUFOs(){
@@ -47,13 +42,11 @@ class Animations extends Component {
     moveUFOOneX() {
         const ufoOneX = this.state.ufoOneX + 3
         this.setState({ ufoOneX });
-        // requestAnimationFrame(this.moveUFOOneX);
     }
 
     moveUFOTwoX() {
         const ufoTwoX = this.state.ufoTwoX - 3
         this.setState({ ufoTwoX });
-        // requestAnimationFrame(this.moveUFOTwoX);
     }
 
     moveUFOY() {
@@ -64,14 +57,12 @@ class Animations extends Component {
         }
         const ufoYAxis = this.state.ufoYAxis + 1;
         this.setState({ ufoYAxis });
-        // requestAnimationFrame(this.moveUFOY);
     }
 
     moveShootingStar() {
         const shootingStarX = this.state.shootingStarX + 5.5;
         const shootingStarY = this.state.shootingStarY - 3.5;
         this.setState({ shootingStarX, shootingStarY });
-        // requestAnimationFrame(this.moveShootingStar);
     }
 
     moveTank() {
@@ -81,16 +72,10 @@ class Animations extends Component {
         }
         const tankX = this.state.tankX - 2;
         this.setState({ tankX });
-        // requestAnimationFrame(this.moveTank)
     }
 
     componentWillUnmount() {
         cancelAnimationFrame(this.moveUFOs);
-        // cancelAnimationFrame(this.moveUFOOneX);
-        // cancelAnimationFrame(this.moveUFOTwoX);
-        // cancelAnimationFrame(this.moveUFOY);
-        // cancelAnimationFrame(this.moveShootingStar);
-        // cancelAnimationFrame(this.moveTank);
     }
 
     render() {
