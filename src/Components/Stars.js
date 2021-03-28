@@ -25,8 +25,9 @@ function Stars(ctx) {
       fillCircle(ctx, 650, 120, 1, `rgba(255, 255, 255, ${1}`);
       fillCircle(ctx, 660, 30, 1.5, `rgba(255, 255, 255, ${0.3}`);
 
-      // ctx.fillStyle = "red"
-      // ctx.fillRect(100, 100, 100, 100);
+
+
+
 }
 
 

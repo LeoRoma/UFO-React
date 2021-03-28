@@ -1,7 +1,5 @@
 import React, { useRef, useEffect } from 'react';
 
-import TheEye2 from './TheEye2';
-
 import BigBen from './BigBen';
 import CallBox from './CallBox';
 import Clouds from './Clouds';
@@ -14,11 +12,13 @@ import Tank from './Tank';
 import TheEye from './TheEye';
 import TowerBridge from './TowerBridge';
 import UFO from './UFO';
-
+import UFOOne from './UFOOne';
+import UFOTwo from './UFOTwo';
+ 
 
 function Canvas(animationsInfo) {
     const canvasRef = useRef(null);
-    const { ufoYAxis, width, height, shootingStarX, shootingStarY, tankX } = animationsInfo;
+    const { ufoYAxis, width, height, shootingStarX, shootingStarY, tankX, ufoOneX, ufoTwoX } = animationsInfo;
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -30,10 +30,12 @@ function Canvas(animationsInfo) {
         ctx.clearRect(0, 0, width, height);
 
         Sky(ctx);
+       
         Stars(ctx);
         Moon(ctx);
+        UFOOne(ctx, ufoOneX);
+        UFOTwo(ctx, ufoTwoX);
         Clouds(ctx);
-        TheEye2(ctx);
         TheEye(ctx);
         BigBen(ctx);
         TowerBridge(ctx);
@@ -44,8 +46,6 @@ function Canvas(animationsInfo) {
         ShootingStar(ctx, shootingStarX, shootingStarY);
         Tank(ctx, tankX)
         ctx.restore();
-
-
     })
 
     return <canvas id="canvas" ref={canvasRef} />
