@@ -50,7 +50,7 @@ function Canvas(animationsInfo) {
         const handleResize = e => {
             if (window.innerWidth <= 800) {
                 ctx.canvas.width = window.innerWidth;
-                ctx.canvas.height = window.innerHeight / 5;
+                ctx.canvas.height = window.innerHeight / 3;
             }
         };
 
