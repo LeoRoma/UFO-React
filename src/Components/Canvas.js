@@ -26,7 +26,6 @@ function Canvas(animationsInfo) {
         canvas.width = width;
         canvas.height = height;
 
-
         ctx.clearRect(0, 0, width, height);
 
         Sky(ctx);

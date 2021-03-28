@@ -1,3 +1,13 @@
+.app{
+    display: flex;
+}
+
 #canvas{
+    padding: 0;
+    margin: auto;
+    display: block;
+
     border: black solid;
+    /* width: 800px;
+    height: 450px; */
 }
