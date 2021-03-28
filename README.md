@@ -44,3 +44,7 @@ At the last I have animated the object such as UFO, Shooting Star and Tank.
 
 The project is deployed in Netlify, this is the following link: https://londonufo.netlify.app/
 Is recommended to open the web page on a screen that is bigger thank 800 x 450 pixels.
+
+## Gif
+
+![Alt text](./gifs/londonufo.gif)
